@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Mash Monetization Overview</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" media="screen" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spartan:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+
+  <!-- Mash Script -->
+  <script>
+    /* Initialize Mash SDK [https://www.npmjs.com/package/@getmash/client-sdk] and set it on the window object */
+    window.MashSettings = {
+      id: "b1779212-364d-425c-9a83-8bd1fa518fa5",
+      position: {
+        desktop: {
+          floatLocation: "bottom-right",
+          shiftUp: 36,
+        },
+        mobile: {
+          floatLocation: "bottom-left",
+          shiftUp: 36,
+        }
+      }
+    };
+    var loader = function () {
+      /**
+       * For this repl we're passing in a custom settings object which will take precedence over platform settings.
+       * Normally the mash wallet is meant to be customized on the mash platfom using a visual editor: (https://wallet.getmash.com/earn)  
+       */
+      window.Mash.init(MashSettings);
+    };
+
+    // Add mash wallet to site. Requires window object to have been initialized with Mash objects.
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.defer = true;
+    script.onload = loader;
+    script.src = "https://wallet.getmash.com/sdk/sdk.js";
+    var head = document.getElementsByTagName("head")[0];
+    head.appendChild(script);
+  </script>
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="top-background"></div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-logo">
+      <img src="/images/mash-logo-text.svg" height="30px" />
+    </div>
+    <div class="navbar-buttons">
+      <button type="button" class="button-outlined" onclick="onClickDemos()">
+        View Demos
+      </button>
+      <button type="button" class="button-outlined" onclick="onClickWidgets()">
+        What is Mash?
+      </button>
+      <button type="button" class="button-outlined">
+        <a href="https://replit.com/@getmash/Monetize-a-web-app-with-Mash-and-Bitcoin-Pet-Rock-Simulator?v=1"
+          target="_blank" style="text-decoration: none; color: rgb(134, 127, 155);">
+          Tutorial
+        </a>
+      </button>
+
+      <!-- Button - Earn With Mash -->
+      <button type="button" class="button-cta">
+        <a href="https://wallet.getmash.com/earn" target="_blank" style="text-decoration: none; color: white;">
+          Earn With Mash
+        </a>
+      </button>
+    </div>
+  </div>
+
+  <!-- Container -->
+  <div class="main-container">
+
+    <!-- Banner -->
+    <div class="top-banner">
+      <div class="banner-logo">
+        <img src="/images/mash-banner-logo.svg" height="130px" />
+      </div>
+      <div class="banner-title">
+        <h1>A better way to earn.</h1>
+        <h1>Monetization that fits.</h1>
+      </div>
+    </div>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+
+      <!-- Widgets View -->
+      <div class="content" id="view-widgets">
+
+        <!-- Content Box - What is Mash? -->
+        <div class="content-box">
+          <div class=" content-chunk">
+            <div class="text-h3">What is Mash?</div>
+            <div class="text-body1">Mash is the easiest way for creators and indie hackers to earn money and get
+              donations. Make money for your
+              Tools, Apps, Software, Games, Newsletters, Interactive Experiences, Live-Streams, Video Content, Education
+              Content, Blogs, Articles, Local News and Podcasts.
+            </div>
+            <a href="https://wallet.getmash.com/earn" target="_blank" style="text-decoration: none;">
+              <button type="button" class="button-cta">Create a Mash Account</button>
+            </a>
+          </div>
+        </div>
+
+        <!--  Content Box - Apps, Tools, and Games -->
+        <div class="content-box-row">
+          <div class="content-chunk">
+            <div class="text-h3">Apps, Tools, and Games</div>
+            <div class="text-body1">Charge any amount per event, action and time – and get paid instantly. Remove the
+              large-up-front purchase barrier for your users so they can get started or purchase that one thing and grow
+              your business today.
+            </div>
+            <button type="button" class="button-outlined" style="width: fit-content;" onclick="onClickDemos()">View
+              Demos</button>
+          </div>
+          <div style="display: flex;">
+            <img src="/images/lovey-smile.svg" height="130px" />
+          </div>
+        </div>
+
+        <!--  Content Box - Donations & Boosts -->
+        <div class="content-box">
+          <!-- Content Chunk - Donations & Boosts -->
+          <div class="content-chunk">
+            <div class="text-h3">Donations & Boosts</div>
+            <div class="text-body1">
+              The fastest way for your users to support you, your contributors and friends –
+              anywhere, for any amount. No entering credit cards every time or minimum amounts. Get paid instantly –
+              seriously.
+            </div>
+            <button type="button" class="button-outlined" style="width: fit-content;" onclick="onClickDemos()">
+              View Demos
+            </button>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- Content Chunk - Boost Button -->
+          <div class="content-chunk">
+            <div class="widget-title">Boost Button</div>
+            <div class="text-body1">One-click-instant-tips from your users. Multiple designs & animations to fit your
+              vibe. Add to your site in less than a few minutes.
+            </div>
+            <!-- Boost Button Container -->
+            <div class="content-panel boost-button-container">
+              <div class="boost-button-column">
+                <div class="boost-button-row">
+                  <!-- 
+                    One of many examples of how a Boost widget can look on your site
+                    Simply add the mash-boost-button HTML tag and give it some attributes to get going
+                    - Learn more at https://wallet.getmash.com/earn
+                    - Widget documentation available at https://docs.getmash.com/?path=/docs/donations-boost-button--boost-button 
+                    -->
+                  <mash-boost-button icon="lightning" layout-mode="inline" display-mode="icon-only"
+                    float-location="bottom-center" color-variant="colorized" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                  <mash-boost-button icon="lightning" layout-mode="inline" display-mode="with-text"
+                    float-location="bottom-center" color-variant="colorized" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                </div>
+                <div class="boost-button-row">
+                  <mash-boost-button icon="lightning" layout-mode="inline" display-mode="icon-only"
+                    float-location="bottom-center" color-variant="light" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                  <mash-boost-button icon="lightning" layout-mode="inline" display-mode="with-text"
+                    float-location="bottom-center" color-variant="light" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                </div>
+                <div class="boost-button-row">
+                  <mash-boost-button icon="lightning" layout-mode="inline" display-mode="icon-only"
+                    float-location="bottom-center" color-variant="dark" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                  <mash-boost-button icon="lightning" layout-mode="inline" display-mode="with-text"
+                    float-location="bottom-center" color-variant="dark" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                </div>
+              </div>
+              <div class="boost-button-column">
+                <div class="boost-button-row">
+                  <mash-boost-button icon="heart" layout-mode="inline" display-mode="icon-only"
+                    float-location="bottom-center" color-variant="colorized" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                  <mash-boost-button icon="heart" layout-mode="inline" display-mode="with-text"
+                    float-location="bottom-center" color-variant="colorized" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                </div>
+                <div class="boost-button-row">
+                  <mash-boost-button icon="heart" layout-mode="inline" display-mode="icon-only"
+                    float-location="bottom-center" color-variant="light" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                  <mash-boost-button icon="heart" layout-mode="inline" display-mode="with-text"
+                    float-location="bottom-center" color-variant="light" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                </div>
+                <div class="boost-button-row">
+                  <mash-boost-button icon="heart" layout-mode="inline" display-mode="icon-only"
+                    float-location="bottom-center" color-variant="dark" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                  <mash-boost-button icon="heart" layout-mode="inline" display-mode="with-text"
+                    float-location="bottom-center" color-variant="dark" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                </div>
+              </div>
+              <div class="boost-button-column">
+                <div class="boost-button-row">
+                  <mash-boost-button icon="fire" layout-mode="inline" display-mode="icon-only"
+                    float-location="bottom-center" color-variant="colorized" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                  <mash-boost-button icon="fire" layout-mode="inline" display-mode="with-text"
+                    float-location="bottom-center" color-variant="colorized" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                </div>
+                <div class="boost-button-row">
+                  <mash-boost-button icon="fire" layout-mode="inline" display-mode="icon-only"
+                    float-location="bottom-center" color-variant="light" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                  <mash-boost-button icon="fire" layout-mode="inline" display-mode="with-text"
+                    float-location="bottom-center" color-variant="light" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                </div>
+                <div class="boost-button-row">
+                  <mash-boost-button icon="fire" layout-mode="inline" display-mode="icon-only"
+                    float-location="bottom-center" color-variant="dark" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                  <mash-boost-button icon="fire" layout-mode="inline" display-mode="with-text"
+                    float-location="bottom-center" color-variant="dark" size="sm" mobile-size="md">
+                  </mash-boost-button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- Content Chunk - Donate Button -->
+          <div class="content-chunk">
+            <h3 class="widget-title">Donate Button</h3>
+            <div class="text-body1">
+              Enable users to select an amount to donate directly to your Mash Wallet.
+            </div>
+            <div class="content-panel">
+              <!-- 
+                This is a donate button widget that connects to the Mash wallet living on this site
+                Just add the mash-donate-button HTML tag and give it some attributes to get started
+                - Learn more at https://wallet.getmash.com/earn
+                - Widget documentation available at https://docs.getmash.com/?path=/docs/donations-donate-button--donate-button 
+              -->
+              <mash-donate-button handle=" skipper" mode="all" button-variant="solid" button-size="lg">
+              </mash-donate-button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Box - Content Monetization -->
+        <div class="content-box">
+
+          <!-- Content Chunk - Content Monetization -->
+          <div class="content-chunk">
+            <div class="text-h3">Content Monetization</div>
+            <div class="text-body1">Use building blocks like an accordion or button content-revealer, link opener to
+              earn for premium experiences. It's being used for everything from full-articles, recipes, downloads, or
+              community membership to sharing a fun-fact about yourself.
+            </div>
+            <button type="button" class="button-outlined" style="width: fit-content;" onclick="onClickDemos()">
+              View Demos
+            </button>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- Content Chunk - Content Revealer-->
+          <div class="content-chunk">
+            <h3 class="widget-title">Content Revealer</h3>
+            <div class="text-body1">
+              Allow users to unlock a premium page or section on your website. Can be used for premium articles, and
+              also to unlock book chapters.
+            </div>
+            <div class="content-panel">
+              <!-- 
+                This is a content revealer widget that connects to the Mash wallet living on this site
+                Just add the mash-content-revealer HTML tag, give it a 'resource' id, and some other attributes to get started
+                - Create or find your widget's resource id on the mash platform's Pay Per Use section 
+                - Learn more at https://wallet.getmash.com/earn
+                - Widget documentation available at https://docs.getmash.com/?path=/docs/widgets-content-revealer--content-revealer
+              -->
+              <mash-content-revealer key="" title="Enjoy some free content, then pay-to-enjoy"
+                subtitle="Setting a budget will auto unlock content." resource="c58e6700-1523-488f-8670-14fa7360b47d"
+                button-size="md" button-variant="solid" loading-indicator-size="14">
+                <p style="max-width: 500px;margin:0 auto;">
+                  A purely peer-to-peer version of electronic cash would allow online payments to be sent directly
+                  from
+                  one party to
+                  another without the burdens of going through a financial institution. Digital signatures provide
+                  part
+                  of
+                  the
+                  solution, but the main benefits are lost if a trusted party is still required to prevent
+                  double-spending. We
+                  propose a solution to the double-spending problem using a peer-to-peer network. The network
+                  timestamps
+                  transactions by hashing them into an ongoing chain of hash-based proof-of-work, forming a record
+                  that
+                  cannot be
+                  changed without redoing the proof-of-work. The longest chain not only serves as proof of the
+                  sequence
+                  of
+                  events
+                  witnessed, but proof that it came from the largest pool of CPU power. As long as honest nodes
+                  control
+                  the most CPU
+                  power on the network, they can generate the longest chain and outpace any attackers. The network
+                  itself
+                  requires
+                  minimal structure. Messages are broadcasted on a best effort basis, and nodes can leave and rejoin
+                  the
+                  network at
+                  will, accepting the longest proof-of-work chain as proof of what happened while they were gone.
+                </p>
+              </mash-content-revealer>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- Content Chunk - Accordion Revealer-->
+          <div class="content-chunk">
+            <h3 class="widget-title">Accordion Revealer</h3>
+            <div class="text-body1">
+              Allow users to unlock a body of text on your website with a one time payment. Can be used for premium
+              articles on blogs.
+            </div>
+            <div class="content-panel">
+              <!-- 
+                This is an accordion revealer widget that connects to the Mash wallet living on this site
+                Just add the mash-accordion HTML tag, give it a 'resource' id, and some other attributes to get started
+                - Create or find your widget's resource id on the mash platform's Pay Per Use section
+                - Learn more at https://wallet.getmash.com/earn
+                - Widget documentation available at https://docs.getmash.com/?path=/docs/widgets-accordion--accordion 
+              -->
+              <mash-accordion key="" resource="c9ff0ba0-0a91-4138-b26a-b0d5af6c4b14" button-horizontal-align="center"
+                button-vertical-align="bottom" button-text="Read More" button-variant="solid" button-size="sm"
+                loading-indicator-size="14">
+                <p>
+                  A purely peer-to-peer version of electronic cash would allow online payments to be sent directly
+                  from
+                  one party to
+                  another without the burdens of going through a financial institution. Digital signatures provide
+                  part
+                  of
+                  the
+                  solution, but the main benefits are lost if a trusted party is still required to prevent
+                  double-spending. We
+                  propose a solution to the double-spending problem using a peer-to-peer network. The network
+                  timestamps
+                  transactions by hashing them into an ongoing chain of hash-based proof-of-work, forming a record
+                  that
+                  cannot be
+                  changed without redoing the proof-of-work. The longest chain not only serves as proof of the
+                  sequence
+                  of
+                  events
+                  witnessed, but proof that it came from the largest pool of CPU power. As long as honest nodes
+                  control
+                  the most CPU
+                  power on the network, they can generate the longest chain and outpace any attackers. The network
+                  itself
+                  requires
+                  minimal structure. Messages are broadcasted on a best effort basis, and nodes can leave and rejoin
+                  the
+                  network at
+                  will, accepting the longest proof-of-work chain as proof of what happened while they were gone.
+                </p>
+              </mash-accordion>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- Content Chunk - Button Revealer-->
+          <div class="content-chunk">
+            <h3 class="widget-title">Button Revealer</h3>
+            <div class="text-body1">
+              Hide and allow users to unlock a small snippet of text behind a button for users to unlock with a one time
+              payment.
+            </div>
+            <div class="content-panel">
+              <!-- 
+                This is a button revealer widget that connects to the Mash wallet living on this site
+                Just add the mash-button-revealer HTML tag, give it a 'resource' id, and some other attributes to get started
+                - Create or find your widget's resource id on the mash platform's Pay Per Use section
+                - Learn more at https://wallet.getmash.com/earn
+                - Widget documentation available at https://docs.getmash.com/?path=/docs/widgets-button-revealer--button-revealer 
+              -->
+              <mash-button-revealer display-text="Click for a secret"
+                hidden-text="It is physically impossible for pigs to look up into the sky." button-size="md"
+                button-variant="solid" resource="60fe57d3-2174-4510-89da-80cd8aa8bb9a" loading-indicator-size="14">
+              </mash-button-revealer>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- Content Chunk - Download Button-->
+          <div class="content-chunk">
+            <h3 class="widget-title">Download Button</h3>
+            <div class="text-body1">
+              Sell downloads of premium assets directly on your site without requiring a large sticker price for a
+              bundled purchase, or losing out on the pesky platform fees that can be 70%+. It's being used for PDFs,
+              Photo Packs, Audio Files, Art Packs, Notion Templates, Art Packs and lots more!
+            </div>
+            <div class="content-panel">
+              <!-- 
+                This is download button widget that connects to the Mash wallet living on this site
+                Just add the mash-download-button HTML tag, give it a 'resource' id, and some other attributes to get started
+                - Create or find your widget's resource id on the mash platform's Pay Per Use section
+                - Learn more at https://wallet.getmash.com/earn
+                - Widget documentation available at https://docs.getmash.com/?path=/docs/widgets-download-button--download-button 
+              -->
+              <mash-download-button href="/static/sample.txt" resource="51fbc778-8d85-41eb-b28c-f93078935b8e"
+                button-variant="solid" button-size="md" loading-indicator-size="14">
+                Download Now!
+              </mash-download-button>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- Content Chunk - Links-->
+          <div class="content-chunk">
+            <h3 class="widget-title">Links</h3>
+            <div class="text-body1">
+              Charge your users to access a link. The link will be visible but will only work once a payment is
+              made.
+            </div>
+            <div class="content-panel">
+              <!-- 
+                This is a link widget that connects to the Mash wallet living on this site
+                Just add the mash-accordion HTML tag, give it a 'resource' id, and some other attributes to get started
+                - Create or find your widget's resource id on the mash platform's Pay Per Use section
+                - Learn more at https://wallet.getmash.com/earn
+                - Widget documentation available at https://docs.getmash.com/?path=/docs/widgets-link--link 
+              -->
+              <mash-link href="https://getmash.com" resource="80858a50-75c0-4002-b11b-0148d49c23f4">Fun Link
+              </mash-link>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- Content Chunk - Video Player-->
+          <div class="content-chunk">
+            <h3 class="widget-title">Video Player</h3>
+            <div class="text-body1">
+              Ask your users to contribute to watch your premium audio or video content – hosted on top video platforms
+              like YT or Vimeo, or self-hosted anywhere playable with our built-in media player. It's being used for
+              behind the scenes content, exclusive mixes, pre-releases and deep dives with special guests.
+            </div>
+            <div class="content-panel">
+              <!-- 
+                This is a video player widget that connects to the Mash wallet living on this site
+                Just add the mash-video-player HTML tag, give it a 'resource' id, and some other attributes to get started
+                - Create or find your widget's resource id on the mash platform's Pay Per Use section
+                - Learn more at https://wallet.getmash.com/earn
+                - Widget documentation available at https://docs.getmash.com/?path=/docs/widgets-video-player--url-video 
+              -->
+              <mash-video-player
+                video-identifier="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" provider="url"
+                resource="e12dcbb9-7d17-4ec6-888a-e8c9936f22ae"
+                thumbnail-url="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+                button-text="Unlock" button-variant="solid" button-size="md" loading-indicator-size="14">
+              </mash-video-player>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Box - Lightning Monetization -->
+        <div class="content-box">
+          <!-- Content Chunk - Content Monetization -->
+          <div class="content-chunk">
+            <div class="text-h3">Lightning Monetization</div>
+            <div class="text-body1">Join the decentralized money experience. Let your users with other Bitcoin Lightning
+              wallets, like CashApp, support you at the speed of Lightning. Great for your site, social networks,
+              link-in-bio pages, or embedded in your videos on YouTube or Twitch.
+            </div>
+            <div style="display: flex; flex-direction: row; gap: 16px;">
+              <button type="button" class="button-outlined" style="width: fit-content;" onclick="onClickDemos()">
+                View Demos
+              </button>
+              <button type="button" class="button-outlined"
+                style="background-color: #867F9B; border: 1px solid #867F9B;">
+                <a href="https://www.getmash.com/news/bitcoin-lightning-address-and-qr-code" target="_blank"
+                  style="text-decoration: none; color: white;">
+                  Learn More
+                </a>
+              </button>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- Content Chunk - LNURL PAY -->
+          <div class="content-chunk">
+            <div class="widget-title">LNURL-Pay</div>
+            <div class=" content-panel">
+              <img src="/images/qr.png" height="166px" />
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- Content Chunk - Lightning Address -->
+          <div class="content-chunk">
+            <div class="widget-title">Lightning Address</div>
+            <div class="content-panel">
+              <div class="lightning-address-container">
+                <div class="lightning-address-text-icon">
+                  <img src="/images/lightning.svg" />
+                  <div class="lightning-address-text" id="lightning-address-text">replit-overview@getmash.cash</div>
+                </div>
+                <div class="lightning-address-copy">
+                  <img src="/images/copy.svg" onclick="copyLightningAddress()" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Box - Footer-->
+        <div class="content-box">
+          <!-- Content Chunk - Footer-->
+          <div class="content-chunk">
+            <!-- Content Panel - Footer -->
+            <div class="content-panel">
+              <div class="content-bottom-callout">
+                <div>
+                  <img src="images/mash-bottom-logo.svg" />
+                </div>
+                <div class="content-bottom-text">
+                  <div>
+                    <div class="text-action3">
+                      Share the repls you create with mash!
+                    </div>
+                    <div class="text-action3">
+                      We’d love to see what you can create with Mash!
+                    </div>
+                  </div>
+                  <div class="text-body1">
+                    You can find us at:
+                  </div>
+                  <div class="content-bottom-links">
+                    <a href="https://twitter.com/getmash" target="_blank">
+                      <div class="text-action3 social-link">
+                        <img src="images/twitter.svg" />
+                        @getmash
+                      </div>
+                    </a>
+                    <a href="https://getmash.com" target="_blank">
+                      <div class="text-action-3 social-link">
+                        <img src="images/site-tab.svg" />
+                        getmash.com
+                      </div>
+                    </a>
+                    <a href="https://t.me/mashpartners" target="_blank">
+                      <div class="text-action3 social-link">
+                        <img src="images/telegram.svg" />
+                        telegram
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demos View -->
+      <div class="content" id="view-demos">
+        <div class="content-box">
+          <!-- Interactive Demo -->
+          <div class="content-chunk">
+            <div class="text-h3">Try our interactive demo</div>
+            <div class="text-body1">Click the pulsing circles to explore
+            </div>
+            <div style="position: relative; padding-bottom: calc(66.66666666666666% + 40px); height: 0;">
+              <iframe src="https://demo.arcade.software/OZbW7RuXdzF3bt0uSFgx?embed" frameborder="0" loading="lazy"
+                webkitallowfullscreen mozallowfullscreen allowfullscreen
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="divider">
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- Our Repls -->
+          <div class="content-chunk">
+            <div class="text-h3">Our Repls</div>
+            <div class="text-body1">Here are some repls you can use to try Mash out for yourself!
+            </div>
+            <div class="repl-container">
+              <div class="repl-row">
+                <!-- Repl: Dinorun Game -->
+                <a href="https://replit.com/@getmash/The-Dino-Game-with-Santa-Christmas-Extension-and-Monetization?v=1"
+                  target="_blank">
+                  <div class="repl">
+                    <img src="/images/dinorun.png" />
+                    <div class="text-action4" style="align-self: flex-start;">Dinorun Game</div>
+                  </div>
+                </a>
+                <!-- Repl: Pinned Repl Profile Template -->
+                <a href="https://replit.com/@getmash/Donation-and-Profile-Link-in-Bio-Replacement-Site?v=1"
+                  target="_blank">
+                  <div class="repl">
+                    <img src="/images/donate_page.png" />
+                    <div class="text-action4" style="align-self: flex-start;">Pinned Repl Profile Template</div>
+                  </div>
+                </a>
+              </div>
+              <div class="repl-row">
+                <!-- Repl: AI Image Generator -->
+                <a href="https://replit.com/@getmash/Stable-Diffusion-AI-Art-Generator-with-Mash?v=1" target="_blank">
+                  <div class="repl">
+                    <img src="/images/stable_diffusion.png" />
+                    <div class="text-action4" style="align-self: flex-start;">AI Image Generator</div>
+                  </div>
+                </a>
+                <!-- Repl: Pet Rock -->
+                <a href="https://replit.com/@getmash/Monetize-a-web-app-with-Mash-and-Bitcoin-Pet-Rock-Simulator?v=1"
+                  target="_blank">
+                  <div class="repl">
+                    <img src="/images/pet_rock.png" />
+                    <div class="text-action4" style="align-self: flex-start;">Pet Rock Simulator</div>
+                  </div>
+                </a>
+                <!-- Repl: Call to action -->
+                <a href="https://wallet.getmash.com/earn" target="_blank"">
+                  <div class=" repl">
+                  <div class="repl-cta">
+                    <div class="text-h1 repl-cta-title">
+                      Show us what you can create with Mash!
+                    </div>
+                    <div class="text-body1 repl-cta-text">
+                      <span class="repl-cta-cta">Create a Mash account</span>
+                      and see how you can start monetizing your content.
+                    </div>
+                  </div>
+              </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Panel - Footer -->
+        <div class="content-panel">
+          <div class="content-bottom-callout">
+            <div>
+              <img src="images/mash-bottom-logo.svg" />
+            </div>
+            <div class="content-bottom-text">
+              <div>
+                <div class="text-action3">
+                  Share the repls you create with mash!
+                </div>
+                <div class="text-action3">
+                  We’d love to see what you can create with Mash!
+                </div>
+              </div>
+              <div class="text-body1">
+                You can find us at:
+              </div>
+              <div class="content-bottom-links">
+                <a href="https://twitter.com/getmash" target="_blank">
+                  <div class="text-action3 social-link">
+                    <img src="images/twitter.svg" />
+                    @getmash
+                  </div>
+                </a>
+                <a href="https://getmash.com" target="_blank">
+                  <div class="text-action-3 social-link">
+                    <img src="images/site-tab.svg" />
+                    getmash.com
+                  </div>
+                </a>
+                <a href="https://t.me/mashpartners" target="_blank">
+                  <div class="text-action3 social-link">
+                    <img src="images/telegram.svg" />
+                    telegram
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Script -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" defer></script>
+  <script src="script.js" defer></script>
+
+  <!--
+This script places a badge on your repl's full-browser view back to your repl's cover
+page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+teal, blue, blurple, magenta, pink!
+-->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+
+</html>
