@@ -8,6 +8,8 @@ const demosView = document.getElementById("view-demos");
 
 // Start out with demos hidden
 demosView.style.display = "none";
+// Start out with widget selected
+document.getElementById(NAV_WIDGET_BTN).classList.add(BTN_OUTLINED_ACTIVE);
 
 /** Handles user clicking on demo button  **/
 function onClickDemos(e) {
@@ -32,7 +34,7 @@ function onClickWidgets(e) {
   // Scroll to top
   window.scrollTo(0, 0);
   
-  // Set to active
+// Set to active
   document.getElementById(NAV_WIDGET_BTN).classList.add(BTN_OUTLINED_ACTIVE);
   document.getElementById(NAV_DEMO_BTN).classList.remove(BTN_OUTLINED_ACTIVE);
 }
@@ -47,6 +49,6 @@ function copyLightningAddress(text) {
 
 // Set toastr options
 toastr.options = { 
-  ...toastr.options, 
-  positionClass: "toast-bottom-center" 
+  ...toastr.option, 
+  positionClass: "tost-bottom-center" 
 };
