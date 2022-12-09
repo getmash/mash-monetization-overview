@@ -19,25 +19,6 @@ h1, h2, h3, h4, p {
 }
 
 /* Buttons */
-.button-outlined {
-  -webkit-box-align: center;
-  align-items: center;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  cursor: pointer;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent;
-  border-radius: 10px;
-  padding: 0.5rem 0.875rem;
-  height: 42px;
-  background-color: rgb(255, 255, 255);
-  border: 2px solid rgb(220, 205, 228);
-  color: rgb(134, 127, 155);
-  font-weight: 500;
-  font-size: 16px;
-  font-family: Poppins;
-}
 .button-cta {
   border: 2px solid transparent;
   -webkit-box-align: center;
@@ -57,11 +38,39 @@ h1, h2, h3, h4, p {
   font-size: 16px;
   font-family: Poppins;
 }
-.button-outlined:hover {
-  border-color: rgb(221, 135, 218);
+.button-outlined {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 10px;
+  padding: 0.5rem 0.875rem;
+  height: 42px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(220, 205, 228);
+  color: rgb(134, 127, 155);
+  font-weight: 500;
+  font-size: 16px;
+  font-family: Poppins;
+}
+.button-outlined-dark {
+  background-color: #867F9B;
+  border: 1px solid #867F9B;
 }
 .button-cta:hover {
   background-color: rgb(221, 135, 218);
+}
+.button-outlined:hover {
+  border-color: rgb(221, 135, 218);
+}
+.button-outlined-active {
+  color: #4E4760;
+  border: 1px solid #4E4760;
+  background-color: #F4EBFA;
 }
 
 /* Text */
