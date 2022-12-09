@@ -17,9 +17,9 @@ function onClickDemos(e) {
 
   // Scroll to top
   window.scrollTo(0, 0);
-  e.classList.add(BTN_OUTLINED_ACTIVE);
-  
+
   // Set to active
+  document.getElementById(NAV_DEMO_BTN).classList.add(BTN_OUTLINED_ACTIVE);
   document.getElementById(NAV_WIDGET_BTN).classList.remove(BTN_OUTLINED_ACTIVE);
 }
 
@@ -33,8 +33,8 @@ function onClickWidgets(e) {
   window.scrollTo(0, 0);
   
   // Set to active
-  e.classList.add(BTN_OUTLINED_ACTIVE);
-document.getElementById(NAV_DEMO_BTN).classList.remove(BTN_OUTLINED_ACTIVE);
+  document.getElementById(NAV_WIDGET_BTN).classList.add(BTN_OUTLINED_ACTIVE);
+  document.getElementById(NAV_DEMO_BTN).classList.remove(BTN_OUTLINED_ACTIVE);
 }
 
 /** Copies lightning address with a notification **/
