@@ -19,8 +19,8 @@ menu.style.display = "flex";
 
 // Set toastr options
 toastr.options = {
-  ...toastr.option,
-  positionClass: "tost-bottom-center"
+  ...toastr.options,
+  positionClass: "toast-bottom-center",
 };
 
 // Start out with demos hidden
@@ -57,7 +57,7 @@ function onClickWidgets(e) {
 }
 
 /** Copies lightning address with a notification **/
-function copyLightningAddress(text) {
+function copyLightningAddress() {
   const el = document.getElementById(LN_ADDRESS_TEXT);
   navigator.clipboard.writeText(el.textContent)
     .then(() => toastr.success("Copied lightning address"))
