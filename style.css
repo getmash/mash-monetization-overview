@@ -7,9 +7,6 @@
 * {
   box-sizing: border-box;
 }
-.toast-message {
-  font-family: Spartan;
-}
 
 html, body {
   height: 100%;
@@ -413,6 +410,11 @@ h1, h2, h3, h4, p {
 }
 .lightning-address-copy {
   display: flex;
+}
+
+/* Toastr */
+.toast-message {
+  font-family: Spartan;
 }
 
 /* Media Queries */
