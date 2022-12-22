@@ -16,7 +16,7 @@
   <!-- Mash Script -->
   <script>
     /* Initialize Mash SDK [https://www.npmjs.com/package/@getmash/client-sdk] and set it on the window object */
-    const mashSettings = {
+    window.MashSettings = {
       id: "b1779212-364d-425c-9a83-8bd1fa518fa5",
       position: {
         desktop: {
@@ -34,7 +34,7 @@
        * For this repl we're passing in a custom settings object which will take precedence over platform settings.
        * Normally the mash wallet is meant to be customized on the mash platfom using a visual editor: (https://wallet.getmash.com/earn)  
        */
-      window.Mash.init(mashSettings);
+      window.Mash.init(MashSettings);
     };
 
     // Add mash wallet to site. Requires window object to have been initialized with Mash objects.
